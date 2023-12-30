@@ -41,4 +41,5 @@ jobs:
           repo_token: ${{ secrets.ayna-frontend }}
           action: "upload"
           app_location: "/dist/search-app"
-          language: "staticsite"
+          language: "static-site"
+          default_file: "index.html"
