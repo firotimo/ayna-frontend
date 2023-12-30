@@ -31,7 +31,9 @@ jobs:
 
       - name: Build Application
         run: npm install && npm run build
-
+      - name: Print Current Directory
+        run: |
+          pwd
       - name: Deploy to Azure Static Web Apps
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
