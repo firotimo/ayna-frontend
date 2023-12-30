@@ -1,0 +1,71 @@
+<!-- src/app/search/search.component.html -->
+
+<div class="page-container">
+  <h1 class="page-title">My City Finder</h1>
+
+  <div class="search-container">
+    <mat-form-field class="example-full-width search-field">
+      <input
+        type="text"
+        placeholder="DZ"
+        aria-label="Number"
+        matInput
+        [formControl]="myControl"
+        [matAutocomplete]="auto"
+      />
+      <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn" (optionSelected)="onOptionSelected($event)">
+        <mat-option *ngFor="let option of filteredOptions | async" [value]="option" >
+          {{ option.name }} - {{ option.country_code }}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+    <!--
+    <mat-form-field class="search-field">
+      <mat-label>Enter your search</mat-label>
+      <input matInput [(ngModel)]="query" placeholder="Search" class="custom-input" />
+    </mat-form-field>
+    -->
+    <button mat-raised-button  (click)="search()" class="search-button">Search</button>
+  </div>
+<!--
+  <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <input
+        type="text"
+        placeholder="Pick one"
+        aria-label="Number"
+        matInput
+        [formControl]="myControl"
+        [matAutocomplete]="auto"
+      />
+      <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+        <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+          {{ option.name }}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </form>
+  -->
+  
+  
+  
+
+  <div class="results-map-container">
+    <div *ngIf="results" class="results-container">
+      <mat-card class="results-card">
+        <mat-card-header>
+          <mat-card-title>Search Results</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <ul>
+            <li *ngFor="let property of results | keyvalue" class="result-item">
+              <strong>{{ property.key }}:</strong> {{ property.value }}
+            </li>
+          </ul>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+    <div id="map" class="map-container"></div>
+  </div>
+</div>
