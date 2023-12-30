@@ -27,9 +27,7 @@ jobs:
           node-version: 18.15.0
 
       - name: Install dependencies and build
-        run: |
-          npm install
-          npm run build
+        run: npm install && npm run build
 
       - name: Print Current Directory
         run: pwd
@@ -41,5 +39,5 @@ jobs:
           repo_token: ${{ secrets.ayna-frontend }}
           action: "upload"
           app_location: "/dist/search-app"
-          language: "static-site"
+          language: staticsite
           default_file: "index.html"
