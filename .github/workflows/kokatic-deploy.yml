@@ -39,5 +39,5 @@ jobs:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_ICY_FOREST_0AE3F0503 }}
           repo_token: ${{ secrets.ayna-frontend }} # Used for Github integrations (i.e. PR comments)
           action: "upload"
-          app_location: "dist" # Adjust this path based on your build output
+          app_location: "/" # Adjust this path based on your build output
           language: "staticsite" # Specify the language
