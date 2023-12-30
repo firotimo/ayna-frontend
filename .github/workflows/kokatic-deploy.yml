@@ -40,5 +40,5 @@ jobs:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_ICY_FOREST_0AE3F0503 }}
           repo_token: ${{ secrets.ayna-frontend }}
           action: "upload"
-          app_location: "/dist"
+          app_location: "/dist/search-app"
           language: "staticsite"
