@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class SearchService {
   private rapidApiKey = '6a41403a8dmsh8898c2340dbfb77p1e19a1jsn77590d3f64f5';
-  private rapidApiBaseUrl = 'http://127.0.0.1:8000/geonames/';
+  private rapidApiBaseUrl = 'https://kokatic.azurewebsites.net/geonames/';
 
   constructor(private http: HttpClient) {}
 
