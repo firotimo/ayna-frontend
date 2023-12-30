@@ -29,8 +29,8 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build Angular app
-        run: npm run build --prod
+      - name: Build Application
+        run: npm install && npm run build
 
       - name: Deploy to Azure Static Web Apps
         id: builddeploy
