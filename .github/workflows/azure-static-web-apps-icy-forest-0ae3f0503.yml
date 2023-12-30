@@ -40,3 +40,4 @@ jobs:
           repo_token: ${{ secrets.ayna-frontend }} # Used for Github integrations (i.e. PR comments)
           action: "upload"
           app_location: "dist" # Adjust this path based on your build output
+          language: "staticsite" # Specify the language
