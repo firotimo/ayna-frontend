@@ -2,7 +2,7 @@
   <h1 class="page-title">My City Finder</h1>
 
   <div class="search-container" fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="start center">
-    <mat-form-field class="example-full-width" fxFlex.gt-sm="50%" fxFlex.lt-md="100%">
+    <mat-form-field class="example-full-width search-field" fxFlex.gt-sm="50%" fxFlex.lt-md="100%">
       <mat-label>Select Country Code</mat-label>
       <select matNativeControl [formControl]="countryCodeControl">
         <option *ngFor="let code of countryCodes" [value]="code">{{ code }}</option>
