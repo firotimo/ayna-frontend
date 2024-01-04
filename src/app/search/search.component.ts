@@ -136,12 +136,13 @@ export class SearchComponent implements OnInit {
   }
 
   onOptionSelected(event: MatAutocompleteSelectedEvent): void {
-    const selectedName: string = event.option.value.name;
+    const selectedGeoNameID: number = event.option.value.geonameid;
+    console.log(selectedGeoNameID)
     // Subscribe to the filteredOptions observable
     this.filteredOptions.subscribe(options => {
-      const filteredOption = options.find(option => option.name === selectedName);
+      const filteredOption = this.options.find(option => option.geonameid == selectedGeoNameID);
       this.results = filteredOption;
-      console.log("filteredOption",filteredOption)
+      console.log("filteredOption",this.results )
       // Perform your logic with the filtered option
       if (filteredOption) {
         // Do something with the filtered option
