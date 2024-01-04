@@ -20,20 +20,14 @@ export class SearchService {
     });
   }
 
-  search(cityName: string): Observable<any> {
+  search(cityName: string, countryCode: string): Observable<any> {
     const apiUrl = `${this.rapidApiBaseUrl}`;
     const headers = this.getHeaders();
 
     // Use HttpParams to set query parameters
-    const params = new HttpParams().set('city_name', cityName);
-
+    const params = new HttpParams()
+    .set('city_name', cityName)
+    .set('country_code', countryCode);
     return this.http.get(apiUrl, { ...headers, params });
-  }
-
-  searchOne(query: string): Observable<any> {
-    const apiUrl = `${this.rapidApiBaseUrl}getone/${encodeURIComponent(query)}`;
-    const headers = this.getHeaders();
-
-    return this.http.get(apiUrl, { headers });
   }
 }
