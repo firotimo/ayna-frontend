@@ -16,8 +16,7 @@ export class SearchService {
   private getHeaders(): HttpHeaders {
     return new HttpHeaders({
       'X-RapidAPI-Host': 'getcity4.p.rapidapi.com',
-      'X-RapidAPI-Key': this.rapidApiKey,
-      'X-RapidAPI-Proxy-Secret': this.proxy
+      'X-RapidAPI-Key': this.rapidApiKey
     });
   }
 
