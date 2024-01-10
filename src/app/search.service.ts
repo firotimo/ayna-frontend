@@ -28,6 +28,6 @@ export class SearchService {
     const params = new HttpParams()
     .set('city_name', cityName)
     .set('country_code', countryCode);
-    return this.http.get(apiUrl, { ...headers, params });
+    return this.http.get(apiUrl, { headers, params });
   }
 }
